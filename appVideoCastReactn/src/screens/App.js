@@ -7,6 +7,7 @@
  */
 import React, { Component } from 'react';
 import Video from 'react-native-video';
+import VideoPlayer from 'react-native-video-controls';
 import { SafeAreaView,StyleSheet,ScrollView,View,Text,StatusBar,Dimensions} from 'react-native';
 import {Header,LearnMoreLinks,Colors,DebugInstructions,ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
@@ -17,7 +18,8 @@ export default class App extends Component {
   render(){
     return(
       <View style={styles.container}>
-           <Video ignoreSslError={true}  source={{uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"}}   // Can be a URL or a local file.
+        <Text>Aqui estará um botão de cast</Text>
+           <VideoPlayer  source={{uri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4"}}   // Can be a URL or a local file.
        ref={(ref) => {
          this.player = ref
        }}                                      // Store reference
@@ -35,5 +37,10 @@ export default class App extends Component {
        flexDirection:'column',
        alignItems:'center',
        justifyContent:'center',
+       backgroundColor:'#2b78e4'
       },
+      cast:{
+        display:'flex',
+        flex:1,
+      }
     });
